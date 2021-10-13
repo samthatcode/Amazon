@@ -20,6 +20,7 @@ const db = getFirestore(firebaseApp);
 const auth = getAuth();
 onAuthStateChanged(auth, user => {
     console.log(user);
+    //...
 })
 
 export { db, auth, firebaseApp }
