@@ -5,18 +5,25 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Signup from "./Signup";
+import Payment from "./Payment";
 import { getAuth, onAuthStateChanged, } from "firebase/auth";
 
+/* npm i @stripe/react-stripe-js  npm i @stripe/stripe-js 
+Blaze Plan on Firebase
+*/
 
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
+const promise = loadStripe(
+  "pk_test_51JkzWhG405z3R6GKWTvlOOSEdxay7uwLVJ53FHmWl9572qYeR8AjtndPgAp41iENi6ltWDGL5pgbKk92YdRv09qe00FQy59cq0"
+);
 
 
 function App() {
 
   const auth = getAuth();
   const user = auth.currentUser;
-  // const uid = user.uid;
-
 
   // Get the currently signed-in user
   onAuthStateChanged(auth, (user) => {
@@ -92,6 +99,13 @@ function App() {
           <Route path="/checkout">
             <Header />
             <Checkout />
+          </Route>
+          <Route path="/payment">
+            <Header />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
+
           </Route>
 
           {/* Make sure your default root is at the bottom like this., Otherwise it won't get listed to */}
