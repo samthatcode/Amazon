@@ -5,9 +5,8 @@ import { getAuth } from "firebase/auth";
 import CheckoutProduct from "./CheckoutProduct";
 import { Link } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import { CurrencyFormat } from 'react-currency-format';
+import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "./Reducer";
-
 
 function Payment() {
   const [{ basket }, dispatch] = useStateValue();
@@ -82,7 +81,7 @@ function Payment() {
                 <CurrencyFormat
                   renderText={(value) => <h3>Order Total: {value}</h3>}
                   decimalScale={2}
-                  value={getBasketTotal(basket)} // Part of the homework
+                  value={getBasketTotal(basket)}
                   displayType={"text"}
                   thousandSeparator={true}
                   prefix={"$"}

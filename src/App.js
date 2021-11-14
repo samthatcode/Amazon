@@ -7,13 +7,12 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Payment from "./Payment";
 import { getAuth, onAuthStateChanged, } from "firebase/auth";
-
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 /* npm i @stripe/react-stripe-js  npm i @stripe/stripe-js 
 Blaze Plan on Firebase
 */
 
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 
 const promise = loadStripe(
   "pk_test_51JkzWhG405z3R6GKWTvlOOSEdxay7uwLVJ53FHmWl9572qYeR8AjtndPgAp41iENi6ltWDGL5pgbKk92YdRv09qe00FQy59cq0"
