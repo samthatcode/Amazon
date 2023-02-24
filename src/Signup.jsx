@@ -58,8 +58,11 @@ function Signup() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            
           </form>
+          
           <p>
+          <input type="checkbox"></input>
             By signing-in you agree to AMAZON CLONE Conditions of Use & Sale.
             Please see our Privacy Notice, our Cookies Notice and our
             Interest-Based Ads Notice.

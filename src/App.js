@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import Header from "./Header";
 import Home from "./Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router, Switch, Route
+} from "react-router-dom";
 import Checkout from "./Checkout";
 import Login from "./Login";
 import Signup from "./Signup";
@@ -43,15 +45,15 @@ function App() {
 
   // You can also get the currently signed-in user by using the currentUser property. If a user isn't signed in, currentUser is null
 
-  if (user) {
-    console.log("user signed in");
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    // ...
-  } else {
-    console.log("No user is signed in");
-    // No user is signed in.
-  }
+  // if (user) {
+  //   console.log("user signed in");
+  //   // User is signed in, see docs for a list of available properties
+  //   // https://firebase.google.com/docs/reference/js/firebase.User
+  //   // ...
+  // } else {
+  //   console.log("No user is signed in");
+  //   // No user is signed in.
+  // }
 
   // Get a user's profile
 
